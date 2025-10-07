@@ -31,13 +31,11 @@ public class PeliculasService {
 
         PeliculasEntity entity = new PeliculasEntity();
 
-        entity.setId(dto.getId());
         entity.setTitulo(dto.getTitulo());
         entity.setDirector(dto.getDirector());
         entity.setGenero(dto.getGenero());
         entity.setAnoEstreno(dto.getAnoEstreno());
         entity.setDuracionMin(dto.getDuracionMin());
-        entity.setFechaCreacion(dto.getFechaCreacion());
 
         return ConvertToPeliculasDTO(repo.save(entity));
     }
@@ -52,7 +50,6 @@ public class PeliculasService {
         entity.setGenero(dto.getGenero());
         entity.setAnoEstreno(dto.getAnoEstreno());
         entity.setDuracionMin(dto.getDuracionMin());
-        entity.setFechaCreacion(dto.getFechaCreacion());
 
         return ConvertToPeliculasDTO(repo.save(entity));
     }
@@ -75,7 +72,6 @@ public class PeliculasService {
         dto.setGenero(entity.getGenero());
         dto.setAnoEstreno(entity.getAnoEstreno());
         dto.setDuracionMin(entity.getDuracionMin());
-        dto.setFechaCreacion(entity.getFechaCreacion());
 
         return dto;
     }

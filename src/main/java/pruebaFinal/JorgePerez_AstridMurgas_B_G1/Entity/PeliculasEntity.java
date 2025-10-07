@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name = "PELICULAS")
@@ -22,7 +23,7 @@ public class PeliculasEntity {
     @Column(name = "ID_PELICULA")
     private Long id;
 
-    @Column(name = "TITULO", unique = true)
+    @Column(name = "TITULO")
     private String titulo;
 
     @Column(name = "DIRECTOR")
@@ -36,8 +37,4 @@ public class PeliculasEntity {
 
     @Column(name = "DURACION_MIN")
     private Double duracionMin;
-
-    @Column(name = "FECHA_CREACION")
-    private LocalDateTime fechaCreacion;
-
 }

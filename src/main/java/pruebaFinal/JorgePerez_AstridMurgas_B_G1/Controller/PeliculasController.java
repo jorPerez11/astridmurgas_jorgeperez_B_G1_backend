@@ -30,7 +30,7 @@ public class PeliculasController {
 
     //POST
     @PostMapping("/peliculas/postPelicula")
-    public ResponseEntity<?> postPeliculas(@RequestParam @Valid PeliculasDTO dto){
+    public ResponseEntity<?> postPeliculas(@RequestBody @Valid PeliculasDTO dto){
         try{
             PeliculasDTO newPelicula = service.createPelicula(dto);
             return new ResponseEntity<>(newPelicula, HttpStatus.OK);
@@ -44,7 +44,7 @@ public class PeliculasController {
 
     //UPDATE (PATCH)
     @PatchMapping("/peliculas/updatePelicula/{id}")
-    public ResponseEntity<?> updatePelicula(@RequestParam @Valid PeliculasDTO dto, @PathVariable Long id){
+    public ResponseEntity<?> updatePelicula(@RequestBody @Valid PeliculasDTO dto, @PathVariable Long id){
         try{
             PeliculasDTO updatedPelicula = service.updatePelicula(dto, id);
             return new ResponseEntity<>(updatedPelicula, HttpStatus.OK);

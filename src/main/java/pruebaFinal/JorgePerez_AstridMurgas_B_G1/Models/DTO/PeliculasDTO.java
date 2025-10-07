@@ -9,6 +9,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -18,7 +19,6 @@ public class PeliculasDTO {
     private Long id;
 
     @NotBlank(message = "El título no puede ser nulo")
-    @Size(max = 200, message = "El título no puede superar los 200 caracteres")
     private String titulo;
 
     @Size(max = 120, message = "El nombre del director no puede superar los 120 caracteres")
@@ -30,8 +30,5 @@ public class PeliculasDTO {
     private Long anoEstreno;
 
     private Double duracionMin;
-
-    @NotBlank(message = "La fecha de creación no puede ser nula")
-    private LocalDateTime fechaCreacion;
 
 }
