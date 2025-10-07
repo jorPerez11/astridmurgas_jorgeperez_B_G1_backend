@@ -31,6 +31,7 @@ public class PeliculasService {
 
         PeliculasEntity entity = new PeliculasEntity();
 
+        entity.setId(dto.getId());
         entity.setTitulo(dto.getTitulo());
         entity.setDirector(dto.getDirector());
         entity.setGenero(dto.getGenero());
@@ -45,6 +46,7 @@ public class PeliculasService {
         //VERIFICAR SI EXISTE REGISTRO
         PeliculasEntity entity = repo.findById(id).orElseThrow(()-> new IllegalArgumentException("La película no esta registrada en la base de datos"));
 
+        entity.setId(dto.getId());
         entity.setTitulo(dto.getTitulo());
         entity.setDirector(dto.getDirector());
         entity.setGenero(dto.getGenero());
@@ -67,6 +69,7 @@ public class PeliculasService {
     private PeliculasDTO ConvertToPeliculasDTO(PeliculasEntity entity) {
         PeliculasDTO dto = new PeliculasDTO();
 
+        dto.setId(entity.getId());
         dto.setTitulo(entity.getTitulo());
         dto.setDirector(entity.getDirector());
         dto.setGenero(entity.getGenero());

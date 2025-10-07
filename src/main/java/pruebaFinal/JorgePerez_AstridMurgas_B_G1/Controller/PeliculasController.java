@@ -53,7 +53,9 @@ public class PeliculasController {
             Map<String, String> errores = new HashMap<>();
             return new ResponseEntity<>(errores, HttpStatus.BAD_REQUEST);
         }catch(Exception e) {
-            return new ResponseEntity<>("Ocurrio un error inesperado.", HttpStatus.BAD_REQUEST);
+            Map<String, String> errores = new HashMap<>();
+            errores.put("Ocurrio un error inesperado.", e.getMessage());
+            return new ResponseEntity<>(errores , HttpStatus.BAD_REQUEST);
         }
     }
 
